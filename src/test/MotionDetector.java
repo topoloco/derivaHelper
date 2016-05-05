@@ -33,6 +33,7 @@ public class MotionDetector {
         canvasFrame.setCanvasSize(frame.width(), frame.height());
 
         CvMemStorage storage = CvMemStorage.create();
+        cvGoodFeaturesToTrack();
 
         while (canvasFrame.isVisible() && (frame = converter.convert(grabber.grab())) != null) {
             cvClearMemStorage(storage);
